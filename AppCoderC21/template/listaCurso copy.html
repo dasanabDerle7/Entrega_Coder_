@@ -1,0 +1,28 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+
+{% block ContenidoQueCambia %}
+    
+
+    <body>
+        
+         
+      {% if cursos %}
+      <h1>Cursos disponibles con el numero de Camada: {{num_camada}} </h1>
+      <h4>Este es nuestro catalogo de cursos:</h4>
+          <ul>
+            
+                {% for curso in cursos %}
+                <li> Curso: {{curso.nombre}}  - Camada:  {{curso.camada}}</li> 
+                {% endfor %}
+                
+    
+          </ul>
+        {% else %} 
+          <h3>No se encontraron cursos con el numero de Camada: {{num_camada}} </h3>
+
+
+      {% endif %}
+{% endblock ContenidoQueCambia %}

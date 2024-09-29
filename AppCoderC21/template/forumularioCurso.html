@@ -1,0 +1,30 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block ContenidoQueCambia %}
+
+<h1>Ingrese el curso a cargar</h1>
+<!-- 
+ <form action="{% url 'formularioCurso' %}" method="get">  El metodo que se utilizar por ahora es GET
+     <p>Curso <input type="text" name="curso" ></p>
+     <p>Camada <input type="number" name="camada" ></p>
+     <button type="submit">Enviar</button>
+
+ </form>-->
+ 
+
+ <!-- 
+ <form action="{% url 'formularioCurso' %}" method="post"> {% csrf_token %}   Debemos agregar el CSRF_TOKEN, para este metodo
+    <p>Curso <input type="text" name="curso" ></p>
+    <p>Camada <input type="number" name="camada" ></p>
+    <button type="submit">Enviar</button> 
+ </form>-->
+
+
+
+  <form action="{% url 'formularioCurso' %}" method="post"> {% csrf_token %}   
+      {{mi_formulario.as_table}}
+      <button type="submit">Enviar</button> 
+  </form>
+{% endblock ContenidoQueCambia %}

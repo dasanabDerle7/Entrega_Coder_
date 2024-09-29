@@ -1,0 +1,21 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+
+{% block ContenidoQueCambia %}
+    <h1>Cursos disponibles </h1>
+
+    <body>
+        Este es nuestro catalogo de cursos:
+    
+        <ul>
+            
+            {% for curso in Lista_Cursos %}
+                <li> Camada:  {{curso.camada}}</li> 
+            {% endfor %}
+                
+    
+        </ul>
+
+{% endblock ContenidoQueCambia %}

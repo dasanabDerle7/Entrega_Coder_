@@ -1,0 +1,21 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+
+{% block ContenidoQueCambia %}
+    <h1>Cursos disponibles </h1>
+
+    <body>
+        Profesores de la carrera:
+    
+        <ul>
+            
+            {% for profesor in Lista_Profesores %}
+                <li>Profesor: {{profesor.nombre}}  {{profesor.apellido}}<br> Profesión: {{profesor.profesion}}</li> 
+            {% endfor %}
+                
+    
+        </ul>
+
+{% endblock ContenidoQueCambia %}
